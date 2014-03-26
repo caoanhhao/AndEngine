@@ -49,7 +49,8 @@ public class Sprite extends Shape {
 	// ===========================================================
 
 	protected ITextureRegion mTextureRegion;
-	protected final ISpriteVertexBufferObject mSpriteVertexBufferObject;
+	// remove final by Cao Anh Hao
+	protected ISpriteVertexBufferObject mSpriteVertexBufferObject;
 
 	protected boolean mFlippedVertical;
 	protected boolean mFlippedHorizontal;
