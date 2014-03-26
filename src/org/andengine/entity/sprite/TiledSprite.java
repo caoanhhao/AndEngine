@@ -109,9 +109,11 @@ public class TiledSprite extends Sprite {
 	public void setTiledTextureRegion(ITiledTextureRegion tiledTexture) {
 		this.mCurrentTileIndex = 0;
 		this.mTextureRegion = tiledTexture;
+		this.mTiledSpriteVertexBufferObject = new HighPerformanceTiledSpriteVertexBufferObject(this.getVertexBufferObjectManager(), TiledSprite.TILEDSPRITE_SIZE * tiledTexture.getTileCount(), DrawType.STATIC, true, Sprite.VERTEXBUFFEROBJECTATTRIBUTES_DEFAULT);
+		this.mSpriteVertexBufferObject = this.mTiledSpriteVertexBufferObject;
 		this.setBlendingEnabled(true);
 		this.initBlendFunction(tiledTexture);
-		this.setSize(this.mTextureRegion.getWidth(), this.mTextureRegion.getHeight());
+		this.setSize(mTextureRegion.getWidth(), mTextureRegion.getHeight());
 		this.onUpdateColor();
 		this.onUpdateTextureCoordinates();
 	}
